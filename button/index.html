@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attractive Background Changer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #a18cd1, #fbc2eb); /* Default gradient */
+      transition: background 1s ease-in-out; /* Smooth background transition */
+    }
+    .container {
+      text-align: center;
+      animation: zoomIn 1s ease-in-out; /* Entry animation */
+    }
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    button {
+      padding: 20px 50px;
+      font-size: 1.5rem;
+      color: #fff;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s ease;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+      transform: translateY(-5px) scale(1.1); /* Slight lift on hover */
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+    }
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Make Your Day Colorful!</h1>
+    <button onclick="changeBackgroundColor()">Change Background</button>
+  </div>
+  <footer>Designed with ❤️ by You</footer>
+
+  <script>
+    function changeBackgroundColor() {
+      const colors = [
+        "linear-gradient(120deg, #a18cd1, #fbc2eb)", // Purple to Pink
+        "linear-gradient(120deg, #f6d365, #fda085)", // Warm Orange
+        "linear-gradient(120deg, #84fab0, #8fd3f4)", // Aqua Blue
+        "linear-gradient(120deg, #fccb90, #d57eeb)", // Peach to Purple
+        "linear-gradient(120deg, #ff9a9e, #fecfef)", // Pastel Pink
+        "linear-gradient(120deg, #cfd9df, #e2ebf0)", // Soft Grey
+        "linear-gradient(120deg, #ffecd2, #fcb69f)", // Light Sunset
+        "linear-gradient(120deg, #fddb92, #d1fdff)", // Sunrise Glow
+        "linear-gradient(120deg, #a1c4fd, #c2e9fb)", // Sky Blue
+        "linear-gradient(120deg, #d4fc79, #96e6a1)"  // Green Meadow
+      ];
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      document.body.style.background = colors[randomIndex];
+    }
+  </script>
+</body>
+</html>
